@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Abdul Abad Qureshi - Portfolio</title>
+
+</head>
+
+
+<body>
+
+
+<header>
+    <h1>Abdul Abad Qureshi</h1>
+    <p>Profile Page:</p>
+</header>
+
+
+<div class="container">
+
+
+<div class="card">
+    <h2>About Me</h2>
+    <p>
+        Hello, I am Abdul.A.Q , I am a student at Adamstown Community College, I am 14 years old and I enjoy coding,electronics and making projects. <br>
+        I also enjoy problem solving and learning how things work and why. I also enjoy watching anime and listening to music.
+    </p>
+</div>
+
+
+<div class="card">
+    <h2>My Hobbies</h2>
+    <ul>
+        <li>Coding</li>
+        <li>Listening to Vocaloid</li>
+        <li>Gaming</li>
+        <li>Building electronic projects</li>
+        <li>Watching anime</li>
+        <li>Electronic engineering</li>
+        <li>Competitive programming</li>
+    </ul>
+</div>
+
+
+<div class="card">
+    <h2>Favourite Subjects</h2>
+    <ol>
+        <li>Engineering</li>
+        <li>Business Studies</li>
+        <li>Computer Science</li>
+        <li>Science</li>
+        <li>Mathematics</li>
+    </ol>
+</div>
+
+
+<div class="card">
+    <h2>Projects</h2>
+
+
+    <img src="https://lh3.googleusercontent.com/d/1Is2pXFixRRpZg4xP1iGT-HZW59oRPSKK">
+    <h3>8-bit Register</h3>
+    <p>
+        A digital storage device built using a 74HC595 shift register IC. Each LED represents a single bit (0 or 1),
+        allowing binary numbers to be stored and displayed.
+    </p>
+
+
+    <h3>How it Works:</h3>
+    <ul>
+        <li>Data is sent serially (one bit at a time) into the 74HC595</li>
+        <li>The IC shifts each bit into internal storage</li>
+        <li>Once loaded, the latch pin updates all outputs at once</li>
+        <li>Each output controls an LED representing a binary value</li>
+        <li>This allows storage of 8-bit numbers (0–255)</li>
+    </ul>
+
+
+    <img src="https://lh3.googleusercontent.com/d/1I6y5oa6iZDlm8OHRA96BSO50Pe5uVeF5">
+    <h3>Wikipedia Summarizer</h3>
+    <p>
+        A smart device that connects to Wi-Fi and fetches summarized Wikipedia content using an ESP32 microcontroller.
+    </p>
+
+
+    <h3>How it Works:</h3>
+    <ul>
+        <li>The ESP32 connects to a Wi-Fi network</li>
+        <li>User inputs a topic using a joystick interface</li>
+        <li>The ESP32 sends a request to Wikipedia's API</li>
+        <li>Text is processed and shortened into a summary</li>
+        <li>The summary is displayed on a TFT screen</li>
+    </ul>
+</div>
+
+
+<div class="card">
+    <h2>Project Summary</h2>
+    <table>
+        <tr>
+            <th>Project</th>
+            <th>Main Component</th>
+            <th>Function</th>
+        </tr>
+        <tr>
+            <td>8-bit Register</td>
+            <td>74HC595</td>
+            <td>Stores binary data</td>
+        </tr>
+        <tr>
+            <td>Wikipedia Summarizer</td>
+            <td>ESP32</td>
+            <td>Fetches and summarizes data</td>
+        </tr>
+    </table>
+</div>
+
+
+<div class="card">
+    <h2>Favourite Game</h2>
+    <p class="link">
+        <a href="https://www.minecraft.net" target="_blank">Minecraft</a>
+    </p>
+</div>
+
+
+</div>
+
+
+<footer>
+    <p>Made by: Abdul Abad Qureshi</p>
+</footer>
+
+
+</body>
+</html>
+
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2b0000);
+    color: white;
+}
+
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, #ff0000, #990000);
+}
+
+
+header h1 {
+    font-size: 40px;
+}
+
+
+header p {
+    opacity: 0.8;
+}
+
+
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 20px;
+}
+
+
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(255,0,0,0.2);
+    transition: 0.3s;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255,0,0,0.5);
+}
+
+
+h2 {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+}
+
+
+h3 {
+    margin-top: 10px;
+    color: #ff9999;
+}
+
+
+ul, ol {
+    margin-left: 20px;
+}
+
+
+img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    margin: 10px 0;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+
+th {
+    background: #ff0000;
+}
+
+
+th, td {
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+
+tr:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+
+a {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    margin-top: 20px;
+}
+
+
+
+
+</style>
+
