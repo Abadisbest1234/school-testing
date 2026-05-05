@@ -34,6 +34,84 @@
                          the field of electronics by enabling device miniaturization, improving performance, and reducing cost.
                     </h3>
                 </div>
+
+                <div class="card">
+                    <h2>
+                        10 Different IC Circuits and Their Functions
+                    </h2>
+                    <table>
+                        <tr>
+                            <th>IC Circuit Type</th>
+                            <th>Function</th>
+                        </tr>
+                        <tr>
+                            <td><strong>AND Gate (7408)</strong></td>
+                            <td>Performs logical AND operation; outputs high only when all inputs are high</td>
+                        </tr>
+                        <tr>
+                            <td><strong>OR Gate (7432)</strong></td>
+                            <td>Performs logical OR operation; outputs high when at least one input is high</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NOT Gate / Inverter (7404)</strong></td>
+                            <td>Inverts the input signal; outputs the opposite logic level</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NAND Gate (7400)</strong></td>
+                            <td>Combines AND and NOT functions; outputs low only when all inputs are high</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NOR Gate (7402)</strong></td>
+                            <td>Combines OR and NOT functions; outputs high only when all inputs are low</td>
+                        </tr>
+                        <tr>
+                            <td><strong>XOR Gate (7486)</strong></td>
+                            <td>Exclusive OR operation; outputs high when inputs are different</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multiplexer (7411 / 74153)</strong></td>
+                            <td>Selects one of multiple input signals and routes it to a single output based on control signals</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Demultiplexer (74138 / 74139)</strong></td>
+                            <td>Routes a single input signal to one of multiple outputs based on control signals</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Decoder (7442 / 74138)</strong></td>
+                            <td>Converts binary input into specific output lines; used for address decoding and selection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Flip-Flop / Latch (7473 / 7474)</strong></td>
+                            <td>Stores binary state; maintains output until reset; fundamental memory element in digital circuits</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h2>
+                        How IC Circuits are Used in CPUs
+                    </h2>
+                    <h3>
+                        IC circuits are the fundamental building blocks of modern Central Processing Units (CPUs). Here's how they work together:
+                    </h3>
+                    <ul>
+                        <li><strong>Logic Gates (AND, OR, NOT, NAND, NOR, XOR):</strong> These basic gates form the foundation of all CPU operations. They perform the Boolean logic necessary for arithmetic operations, comparisons, and decision-making within the processor.</li>
+                        
+                        <li><strong>Flip-Flops and Latches:</strong> These circuits act as the CPU's primary memory elements at the register level. They store individual bits of data during computation cycles and help manage the flow of information through the processor.</li>
+                        
+                        <li><strong>Multiplexers and Demultiplexers:</strong> CPUs use these circuits to route data between different components. Multiplexers select which data path to use, while demultiplexers direct signals to appropriate destinations within the processor architecture.</li>
+                        
+                        <li><strong>Decoders:</strong> CPU instruction decoders use these IC circuits to interpret machine code instructions and determine which internal CPU operations need to be executed. They convert binary instruction codes into control signals for various CPU components.</li>
+                        
+                        <li><strong>Arithmetic Logic Unit (ALU):</strong> The ALU is constructed using combinations of logic gate ICs to perform addition, subtraction, multiplication, and logical operations. Complex operations are built from simpler IC gate combinations.</li>
+                        
+                        <li><strong>Cache Memory:</strong> Modern CPUs contain cache memory (L1, L2, L3) built from millions of flip-flop based ICs organized in sophisticated arrays that work with decoder circuits for fast data access.</li>
+                        
+                        <li><strong>Clock Synchronization:</strong> Specialized IC circuits generate and distribute the clock signal that synchronizes all operations within the CPU, ensuring components work in perfect harmony.</li>
+                        
+                        <li><strong>Integration Scale:</strong> Modern CPUs contain billions of transistors forming millions of IC circuits integrated onto a single chip, all working together to execute billions of instructions per second.</li>
+                    </ul>
+                </div>
             
     </body>
 </div>
