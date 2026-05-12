@@ -1,242 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Kasane Teto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
 
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        canvas {
+            border: 2px solid #00f;
+            background-color: #000;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            text-align: center;
+            font-size: 14px;
+            max-width: 600px;
+        }
+
+        .score {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffff00;
+        }
+
+        .controls {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #0ff;
+        }
+    </style>
 </head>
-
-
 <body>
+    <h1>🎮 Pac-Man Game</h1>
+    <div class="score">Score: <span id="score">0</span></div>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div class="info">
+        <p>Use Arrow Keys to move Pac-Man. Collect all the dots to win!</p>
+        <div class="controls">
+            <p>↑ ↓ ← → to move</p>
+            <p>Press R to restart</p>
+        </div>
+    </div>
 
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
 
-<header>
-    <h1>Kasane Teto</h1>
-    <p>The Red Vocaloid</p>
-</header>
+        // Game variables
+        const tileSize = 20;
+        const cols = canvas.width / tileSize;
+        const rows = canvas.height / tileSize;
 
+        // Pac-Man
+        let pacman = {
+            x: Math.floor(cols / 2),
+            y: Math.floor(rows / 2),
+            dx: 0,
+            dy: 0,
+            nextDx: 0,
+            nextDy: 0,
+            mouthOpen: true,
+            mouthTimer: 0
+        };
 
-<div class="container">
+        // Game state
+        let dots = [];
+        let score = 0;
+        let gameWon = false;
 
+        // Initialize dots
+        function initDots() {
+            dots = [];
+            for (let y = 0; y < rows; y++) {
+                for (let x = 0; x < cols; x++) {
+                    if (!(x === pacman.x && y === pacman.y)) {
+                        dots.push({ x, y });
+                    }
+                }
+            }
+        }
 
-<div class="card">
-    <h2>About Kasane Teto</h2>
-    <p>
-        Kasane Teto is a Vocaloid character known for her distinctive red and black appearance and cheerful personality. 
-        Originally created as a joke character, she has become beloved by the Vocaloid community for her unique voice and charming character design. 
-        Her voice provider, Saki Fujita, gives her a bright and energetic sound that perfectly matches her vibrant aesthetic.
-    </p>
-</div>
+        // Keyboard controls
+        document.addEventListener('keydown', (e) => {
+            switch(e.key.toLowerCase()) {
+                case 'arrowup':
+                    pacman.nextDx = 0;
+                    pacman.nextDy = -1;
+                    e.preventDefault();
+                    break;
+                case 'arrowdown':
+                    pacman.nextDx = 0;
+                    pacman.nextDy = 1;
+                    e.preventDefault();
+                    break;
+                case 'arrowleft':
+                    pacman.nextDx = -1;
+                    pacman.nextDy = 0;
+                    e.preventDefault();
+                    break;
+                case 'arrowright':
+                    pacman.nextDx = 1;
+                    pacman.nextDy = 0;
+                    e.preventDefault();
+                    break;
+                case 'r':
+                    resetGame();
+                    break;
+            }
+        });
 
+        // Reset game
+        function resetGame() {
+            pacman = {
+                x: Math.floor(cols / 2),
+                y: Math.floor(rows / 2),
+                dx: 0,
+                dy: 0,
+                nextDx: 0,
+                nextDy: 0,
+                mouthOpen: true,
+                mouthTimer: 0
+            };
+            score = 0;
+            gameWon = false;
+            initDots();
+            document.getElementById('score').textContent = '0';
+        }
 
-<div class="card">
-    <h2>Character Traits</h2>
-    <ul>
-        <li>Cheerful and energetic personality</li>
-        <li>Known for her distinctive high-pitched voice</li>
-        <li>Signature red and black color scheme</li>
-        <li>Often depicted with a playful and mischievous attitude</li>
-        <li>Popular in fan music and animations</li>
-        <li>Strong presence in the Vocaloid community</li>
-        <li>Versatile performer across multiple music genres</li>
-    </ul>
-</div>
+        // Update game state
+        function update() {
+            if (gameWon) return;
 
+            // Try to move in the direction player wants
+            if (canMove(pacman.x + pacman.nextDx, pacman.y + pacman.nextDy)) {
+                pacman.dx = pacman.nextDx;
+                pacman.dy = pacman.nextDy;
+            }
 
-<div class="card">
-    <h2>Visual Design</h2>
-    <table>
-        <tr>
-            <th>Feature</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>Hair Color</td>
-            <td>Red and black split-colored hair</td>
-        </tr>
-        <tr>
-            <td>Primary Colors</td>
-            <td>Bright Red (#FF0000) and Black (#000000)</td>
-        </tr>
-        <tr>
-            <td>Outfit Style</td>
-            <td>Futuristic and colorful cyberpunk aesthetic</td>
-        </tr>
-        <tr>
-            <td>Character Symbol</td>
-            <td>Known for her unique and recognizable appearance</td>
-        </tr>
-    </table>
-</div>
+            // Move Pac-Man
+            const newX = pacman.x + pacman.dx;
+            const newY = pacman.y + pacman.dy;
 
+            if (canMove(newX, newY)) {
+                pacman.x = newX;
+                pacman.y = newY;
+            }
 
-<div class="card">
-    <h2>Notable Characteristics</h2>
-    <ol>
-        <li>Her voice is one of the most distinctive in the Vocaloid lineup</li>
-        <li>She has appeared in numerous popular Vocaloid songs</li>
-        <li>Her character is celebrated in fan art and animations worldwide</li>
-        <li>She represents a unique blend of cute and futuristic aesthetics</li>
-        <li>Her popularity has grown significantly since her introduction</li>
-    </ol>
-</div>
+            // Wrap around edges
+            if (pacman.x < 0) pacman.x = cols - 1;
+            if (pacman.x >= cols) pacman.x = 0;
+            if (pacman.y < 0) pacman.y = rows - 1;
+            if (pacman.y >= rows) pacman.y = 0;
 
+            // Check for dots
+            dots = dots.filter(dot => {
+                if (dot.x === pacman.x && dot.y === pacman.y) {
+                    score += 10;
+                    document.getElementById('score').textContent = score;
+                    return false;
+                }
+                return true;
+            });
 
-<div class="card">
-    <h2>Cultural Impact</h2>
-    <p>
-        Kasane Teto has made a significant impact on Vocaloid culture and anime fandom. 
-        Her energetic personality and unique voice have inspired countless songs, artworks, and fan creations. 
-        She represents the creative and playful spirit of the Vocaloid community, continuing to bring joy to fans around the world.
-    </p>
-</div>
+            // Check win condition
+            if (dots.length === 0) {
+                gameWon = true;
+                alert('You Won! Score: ' + score);
+            }
 
+            // Animate mouth
+            pacman.mouthTimer++;
+            if (pacman.mouthTimer > 10) {
+                pacman.mouthOpen = !pacman.mouthOpen;
+                pacman.mouthTimer = 0;
+            }
+        }
 
-<div class="card">
-    <h2>Learn More</h2>
-    <p class="link">
-        <a href="https://en.wikipedia.org/wiki/Vocaloid" target="_blank">Vocaloid on Wikipedia</a>
-    </p>
-</div>
+        // Check if can move to position
+        function canMove(x, y) {
+            return x >= 0 && x < cols && y >= 0 && y < rows;
+        }
 
+        // Draw game
+        function draw() {
+            // Clear canvas
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-</div>
+            // Draw dots
+            ctx.fillStyle = '#ffb8d1';
+            dots.forEach(dot => {
+                ctx.fillRect(
+                    dot.x * tileSize + tileSize / 2 - 2,
+                    dot.y * tileSize + tileSize / 2 - 2,
+                    4,
+                    4
+                );
+            });
 
+            // Draw Pac-Man
+            drawPacman();
+        }
 
-<footer>
-    <p>Made by: Abdul Abad Qureshi</p>
-</footer>
+        // Draw Pac-Man
+        function drawPacman() {
+            ctx.fillStyle = '#ffff00';
+            ctx.beginPath();
 
+            const x = pacman.x * tileSize + tileSize / 2;
+            const y = pacman.y * tileSize + tileSize / 2;
+            const radius = tileSize / 2 - 2;
 
+            // Calculate mouth angle
+            const mouthAngle = pacman.mouthOpen ? 0.3 : 0.1;
+
+            // Get direction for rotation
+            let startAngle = 0;
+            let endAngle = Math.PI * 2;
+
+            if (pacman.dx === 1) startAngle = -mouthAngle;
+            else if (pacman.dx === -1) startAngle = Math.PI + mouthAngle;
+            else if (pacman.dy === 1) startAngle = Math.PI / 2 + mouthAngle;
+            else if (pacman.dy === -1) startAngle = -Math.PI / 2 + mouthAngle;
+
+            endAngle = startAngle + (Math.PI * 2 - mouthAngle * 2);
+
+            ctx.arc(x, y, radius, startAngle, endAngle);
+            ctx.lineTo(x, y);
+            ctx.fill();
+
+            // Draw eye
+            ctx.fillStyle = '#000';
+            const eyeOffsetX = pacman.dx !== 0 ? pacman.dx * 4 : 0;
+            const eyeOffsetY = pacman.dy !== 0 ? pacman.dy * 4 : 0;
+            ctx.fillRect(x + eyeOffsetX - 1, y + eyeOffsetY - 1, 2, 2);
+        }
+
+        // Game loop
+        function gameLoop() {
+            update();
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Start game
+        initDots();
+        gameLoop();
+    </script>
 </body>
 </html>
-
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0d0d0d, #1a0000);
-    color: white;
-}
-
-
-header {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(90deg, #ff0000, #cc0000);
-}
-
-
-header h1 {
-    font-size: 40px;
-    color: white;
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-}
-
-
-header p {
-    opacity: 0.9;
-    color: white;
-}
-
-
-.container {
-    width: 85%;
-    margin: auto;
-    padding: 20px;
-}
-
-
-.card {
-    background: rgba(255, 0, 0, 0.08);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
-    border: 1px solid rgba(255, 0, 0, 0.2);
-    transition: 0.3s;
-}
-
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
-    border-color: rgba(255, 0, 0, 0.5);
-}
-
-
-h2 {
-    color: #ff4d4d;
-    margin-bottom: 10px;
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-}
-
-
-h3 {
-    margin-top: 10px;
-    color: #ff9999;
-}
-
-
-ul, ol {
-    margin-left: 20px;
-}
-
-
-img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 12px;
-    margin: 10px 0;
-}
-
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-
-th {
-    background: linear-gradient(90deg, #ff0000, #cc0000);
-    color: white;
-}
-
-
-th, td {
-    padding: 10px;
-    border: 1px solid rgba(255, 0, 0, 0.2);
-}
-
-
-tr:hover {
-    background: rgba(255, 0, 0, 0.15);
-}
-
-
-a {
-    color: #ff4d4d;
-    font-weight: bold;
-    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
-}
-
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(90deg, #0d0d0d, #1a0000);
-    border-top: 2px solid rgba(255, 0, 0, 0.3);
-    margin-top: 20px;
-}
-
-
-</style>
