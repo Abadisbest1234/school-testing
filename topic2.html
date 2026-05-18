@@ -1,1 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Competitive Programming Guide</title>
+</head>
 
+<body>
+
+<header>
+    <h1>Competitive Programming</h1>
+    <p>Learn algorithms, problem-solving strategies, and compete!</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+    <h2>What is Competitive Programming?</h2>
+    <p>
+        Competitive programming is a sport where programmers solve algorithmic problems under time constraints. 
+        It develops problem-solving skills, helps you learn new algorithms, and prepares you for technical interviews. 
+        Popular platforms include Codeforces, LeetCode, HackerRank, and AtCoder.
+    </p>
+</div>
+
+<div class="card">
+    <h2>Essential Algorithms</h2>
+    <ul>
+        <li><strong>Sorting:</strong> QuickSort, MergeSort, HeapSort</li>
+        <li><strong>Searching:</strong> Binary Search, Linear Search</li>
+        <li><strong>Graph Algorithms:</strong> BFS, DFS, Dijkstra's, Floyd-Warshall</li>
+        <li><strong>Dynamic Programming:</strong> Memoization, Tabulation</li>
+        <li><strong>Mathematical:</strong> Modular Arithmetic, Prime Numbers, GCD</li>
+        <li><strong>Data Structures:</strong> Arrays, Linked Lists, Trees, Hash Tables</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2>Programming Languages for CP</h2>
+    <table>
+        <tr>
+            <th>Language</th>
+            <th>Speed</th>
+            <th>Best For</th>
+        </tr>
+        <tr>
+            <td>C++</td>
+            <td>⚡ Fastest</td>
+            <td>Speed-critical problems</td>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>🐢 Slower</td>
+            <td>Quick prototyping, math problems</td>
+        </tr>
+        <tr>
+            <td>Java</td>
+            <td>⚡ Fast</td>
+            <td>Balanced approach</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2>Interactive Python Algorithm Visualizer</h2>
+    <p>Select an algorithm and see how it works:</p>
+    
+    <div style="margin: 15px 0;">
+        <label for="algo-select"><strong>Choose Algorithm:</strong></label>
+        <select id="algo-select" style="padding: 8px; margin: 10px 0; border-radius: 5px; cursor: pointer;">
+            <option value="">-- Select an Algorithm --</option>
+            <option value="bubble">Bubble Sort</option>
+            <option value="binary">Binary Search</option>
+            <option value="fibonacci">Fibonacci Sequence</option>
+            <option value="factorial">Factorial Calculation</option>
+        </select>
+    </div>
+
+    <div id="input-section" style="display: none; margin: 15px 0;">
+        <label for="user-input"><strong>Input:</strong></label><br>
+        <input type="text" id="user-input" placeholder="Enter values (comma-separated)" style="padding: 8px; width: 100%; max-width: 400px; margin: 10px 0; border-radius: 5px;">
+        <button onclick="runAlgorithm()" style="padding: 8px 16px; background: #ff4d4d; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Run Algorithm</button>
+    </div>
+
+    <div id="output-section" style="display: none; margin-top: 15px; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; border-left: 4px solid #ff4d4d;">
+        <h3 style="color: #ff9999;">Output:</h3>
+        <pre id="output" style="color: #00ff00; font-family: 'Courier New', monospace; overflow-x: auto;"></pre>
+    </div>
+
+    <div id="code-section" style="display: none; margin-top: 15px; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+        <h3 style="color: #ff9999;">Python Code:</h3>
+        <pre id="code-display" style="color: #ff9999; font-family: 'Courier New', monospace; overflow-x: auto; font-size: 12px;"></pre>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Time Complexity Guide</h2>
+    <table>
+        <tr>
+            <th>Complexity</th>
+            <th>Name</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>O(1)</td>
+            <td>Constant</td>
+            <td>Array access by index</td>
+        </tr>
+        <tr>
+            <td>O(log n)</td>
+            <td>Logarithmic</td>
+            <td>Binary Search</td>
+        </tr>
+        <tr>
+            <td>O(n)</td>
+            <td>Linear</td>
+            <td>Simple loop</td>
+        </tr>
+        <tr>
+            <td>O(n²)</td>
+            <td>Quadratic</td>
+            <td>Nested loops</td>
+        </tr>
+        <tr>
+            <td>O(2ⁿ)</td>
+            <td>Exponential</td>
+            <td>Recursive fibonacci</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2>Tips for Success</h2>
+    <ol>
+        <li><strong>Start Easy:</strong> Begin with Codeforces Div 2 A/B problems</li>
+        <li><strong>Master Fundamentals:</strong> Understand arrays, strings, and basic algorithms</li>
+        <li><strong>Practice Regularly:</strong> Solve at least 1-2 problems daily</li>
+        <li><strong>Analyze Solutions:</strong> Read editorials and understand other approaches</li>
+        <li><strong>Join Communities:</strong> Participate in contests and discuss with others</li>
+        <li><strong>Track Progress:</strong> Use rating systems to measure improvement</li>
+        <li><strong>Debug Efficiently:</strong> Learn to spot edge cases and common mistakes</li>
+    </ol>
+</div>
+
+<div class="card">
+    <h2>Popular Competitive Programming Platforms</h2>
+    <p class="link">
+        <a href="https://codeforces.com" target="_blank">🔴 Codeforces</a> - 
+        <a href="https://www.hackerrank.com" target="_blank">🔵 HackerRank</a> - 
+        <a href="https://leetcode.com" target="_blank">🟡 LeetCode</a> - 
+        <a href="https://atcoder.jp" target="_blank">🟢 AtCoder</a>
+    </p>
+</div>
+
+</div>
+
+<footer>
+    <p>Made by: Abdul Abad Qureshi | Competitive Programming Guide 2026</p>
+</footer>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2b0000);
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, #ff0000, #990000);
+}
+
+header h1 {
+    font-size: 40px;
+}
+
+header p {
+    opacity: 0.8;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(255,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255,0,0,0.5);
+}
+
+h2 {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 10px;
+    color: #ff9999;
+}
+
+ul, ol {
+    margin-left: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    background: #ff0000;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-align: left;
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+a {
+    color: #ff4d4d;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.link {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    margin-top: 20px;
+}
+
+select, input {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,0,0,0.5);
+}
+
+select:focus, input:focus {
+    outline: none;
+    border: 1px solid #ff4d4d;
+}
+
+button:hover {
+    background: #ff6666 !important;
+    transform: scale(1.05);
+}
+</style>
+
+<script>
+// Algorithm implementations and visualizations
+const algorithms = {
+    bubble: {
+        name: 'Bubble Sort',
+        code: `def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr`,
+        execute: function(input) {
+            let arr = input.split(',').map(x => parseInt(x.trim())).filter(x => !isNaN(x));
+            let steps = [];
+            let n = arr.length;
+            
+            for (let i = 0; i < n; i++) {
+                for (let j = 0; j < n-i-1; j++) {
+                    if (arr[j] > arr[j+1]) {
+                        [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
+                        steps.push(`Swap ${arr[j]} and ${arr[j+1]}: ${arr.join(', ')}`);
+                    }
+                }
+            }
+            return `Input: ${input}\n\nSteps:\n${steps.join('\n')}\n\nResult: ${arr.join(', ')}\nTime Complexity: O(n²)`;
+        }
+    },
+    binary: {
+        name: 'Binary Search',
+        code: `def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1`,
+        execute: function(input) {
+            let parts = input.split(',');
+            let target = parseInt(parts[0].trim());
+            let arr = parts.slice(1).map(x => parseInt(x.trim())).sort((a,b) => a-b);
+            let steps = [];
+            
+            let left = 0, right = arr.length - 1;
+            while (left <= right) {
+                let mid = Math.floor((left + right) / 2);
+                steps.push(`Search in [${arr.slice(left, right+1).join(', ')}], mid=${arr[mid]}`);
+                if (arr[mid] === target) {
+                    return `Input: Target=${target}, Array=${arr.join(', ')}\n\nSteps:\n${steps.join('\n')}\n\nResult: Found at index ${mid}\nTime Complexity: O(log n)`;
+                } else if (arr[mid] < target) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+            return `Input: Target=${target}, Array=${arr.join(', ')}\n\nSteps:\n${steps.join('\n')}\n\nResult: Not found\nTime Complexity: O(log n)`;
+        }
+    },
+    fibonacci: {
+        name: 'Fibonacci Sequence',
+        code: `def fibonacci(n):
+    if n <= 1:
+        return n
+    a, b = 0, 1
+    for _ in range(2, n+1):
+        a, b = b, a + b
+    return b`,
+        execute: function(input) {
+            let n = parseInt(input.trim());
+            if (n < 0) return 'Error: n must be non-negative';
+            if (n > 50) return 'Error: n too large (max 50)';
+            
+            let fib = [0, 1];
+            for (let i = 2; i <= n; i++) {
+                fib.push(fib[i-1] + fib[i-2]);
+            }
+            return `Generate first ${n+1} Fibonacci numbers:\n\n${fib.slice(0, n+1).join(', ')}\n\nF(${n}) = ${fib[n]}\nTime Complexity: O(n)`;
+        }
+    },
+    factorial: {
+        name: 'Factorial Calculation',
+        code: `def factorial(n):
+    if n < 0:
+        return "Error"
+    if n == 0 or n == 1:
+        return 1
+    result = 1
+    for i in range(2, n+1):
+        result *= i
+    return result`,
+        execute: function(input) {
+            let n = parseInt(input.trim());
+            if (n < 0) return 'Error: n must be non-negative';
+            if (n > 20) return 'Error: n too large (max 20)';
+            
+            let result = 1;
+            let steps = [];
+            for (let i = 1; i <= n; i++) {
+                result *= i;
+                steps.push(`${i}! = ${result}`);
+            }
+            return `Calculate factorial of ${n}:\n\n${steps.join('\n')}\n\nResult: ${n}! = ${result}\nTime Complexity: O(n)`;
+        }
+    }
+};
+
+document.getElementById('algo-select').addEventListener('change', function() {
+    const selected = this.value;
+    const inputSection = document.getElementById('input-section');
+    const outputSection = document.getElementById('output-section');
+    const codeSection = document.getElementById('code-section');
+    
+    if (selected && algorithms[selected]) {
+        inputSection.style.display = 'block';
+        codeSection.style.display = 'block';
+        document.getElementById('code-display').textContent = algorithms[selected].code;
+        outputSection.style.display = 'none';
+    } else {
+        inputSection.style.display = 'none';
+        outputSection.style.display = 'none';
+        codeSection.style.display = 'none';
+    }
+});
+
+function runAlgorithm() {
+    const selected = document.getElementById('algo-select').value;
+    const userInput = document.getElementById('user-input').value;
+    
+    if (!selected || !userInput) {
+        alert('Please select an algorithm and provide input');
+        return;
+    }
+    
+    try {
+        const result = algorithms[selected].execute(userInput);
+        document.getElementById('output').textContent = result;
+        document.getElementById('output-section').style.display = 'block';
+    } catch (error) {
+        document.getElementById('output').textContent = 'Error: ' + error.message;
+        document.getElementById('output-section').style.display = 'block';
+    }
+}
+
+// Allow Enter key to run algorithm
+document.getElementById('user-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') runAlgorithm();
+});
+</script>
+
+</body>
+</html>
