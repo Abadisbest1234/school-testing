@@ -4,13 +4,26 @@
         <meta charset="UTF-8">
         <title>what is a IC circut and how do they work</title>
     </head>
+    <body>
+        <!-- Navigation Menu -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">Abdul Abad Qureshi</div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="topic1.html" class="active">Topic 1: IC Circuits</a></li>
+                    <li><a href="topic2.html">Topic 2: Competitive Programming</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
         <header>
             <h1>What is a IC circut and how do they work?</h1>
             <p>By Abdul Abad Qureshi</p>
         </header>
 
 <div class="container">    
-    <body>
                 <div class="card">
                     <h2>
                         What is a IC circut?
@@ -95,28 +108,31 @@
                         IC circuits are the fundamental building blocks of modern Central Processing Units (CPUs). Here's how they work together:
                     </h3>
                     <ul>
-                        <li><strong>Logic Gates (AND, OR, NOT, NAND, NOR, XOR):</strong> These basic gates form the foundation of all CPU operations. They perform the Boolean logic necessary for arithmetic operations, comparisons, and decision-making within the processor.</li>
+                        <li><strong>Logic Gates (AND, OR, NOT, NAND, NOR, XOR):</strong> These basic gates form the foundation of all CPU operations. They perform the Boolean logic necessary for all computations.</li>
                         
-                        <li><strong>Flip-Flops and Latches:</strong> These circuits act as the CPU's primary memory elements at the register level. They store individual bits of data during computation cycles and help manage the flow of information through the processor.</li>
+                        <li><strong>Flip-Flops and Latches:</strong> These circuits act as the CPU's primary memory elements at the register level. They store individual bits of data during computation.</li>
                         
-                        <li><strong>Multiplexers and Demultiplexers:</strong> CPUs use these circuits to route data between different components. Multiplexers select which data path to use, while demultiplexers direct signals to appropriate destinations within the processor architecture.</li>
+                        <li><strong>Multiplexers and Demultiplexers:</strong> CPUs use these circuits to route data between different components. Multiplexers select which data path to use, while demultiplexers distribute data.</li>
                         
-                        <li><strong>Decoders:</strong> CPU instruction decoders use these IC circuits to interpret machine code instructions and determine which internal CPU operations need to be executed. They convert binary instruction codes into control signals for various CPU components.</li>
+                        <li><strong>Decoders:</strong> CPU instruction decoders use these IC circuits to interpret machine code instructions and determine which internal CPU operations need to be performed.</li>
                         
-                        <li><strong>Arithmetic Logic Unit (ALU):</strong> The ALU is constructed using combinations of logic gate ICs to perform addition, subtraction, multiplication, and logical operations. Complex operations are built from simpler IC gate combinations.</li>
+                        <li><strong>Arithmetic Logic Unit (ALU):</strong> The ALU is constructed using combinations of logic gate ICs to perform addition, subtraction, multiplication, and logical operations.</li>
                         
-                        <li><strong>Cache Memory:</strong> Modern CPUs contain cache memory (L1, L2, L3) built from millions of flip-flop based ICs organized in sophisticated arrays that work with decoder circuits for fast data access.</li>
+                        <li><strong>Cache Memory:</strong> Modern CPUs contain cache memory (L1, L2, L3) built from millions of flip-flop based ICs organized in sophisticated arrays that work with high efficiency.</li>
                         
-                        <li><strong>Clock Synchronization:</strong> Specialized IC circuits generate and distribute the clock signal that synchronizes all operations within the CPU, ensuring components work in perfect harmony.</li>
+                        <li><strong>Clock Synchronization:</strong> Specialized IC circuits generate and distribute the clock signal that synchronizes all operations within the CPU, ensuring correct timing and data flow.</li>
                         
-                        <li><strong>Integration Scale:</strong> Modern CPUs contain billions of transistors forming millions of IC circuits integrated onto a single chip, all working together to execute billions of instructions per second.</li>
+                        <li><strong>Integration Scale:</strong> Modern CPUs contain billions of transistors forming millions of IC circuits integrated onto a single chip, all working together to execute programs at incredible speeds.</li>
                     </ul>
                 </div>
             
-    </body>
 </div>
 
-</div>
+<footer>
+    <p>Made by: Abdul Abad Qureshi</p>
+</footer>
+
+</body>
 </html>
 
 <style>
@@ -126,6 +142,50 @@
         box-sizing: border-box;
     }
     
+    /* Navigation Styles */
+    .navbar {
+        background: linear-gradient(90deg, #1a0000, #330000);
+        padding: 0;
+        box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .nav-container {
+        width: 85%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+    }
+
+    .nav-brand {
+        color: #ff4d4d;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+    }
+
+    .nav-menu a {
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+        font-weight: 500;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        color: #ff4d4d;
+        border-bottom: 2px solid #ff4d4d;
+        padding-bottom: 5px;
+    }
     
     body {
         font-family: 'Segoe UI', sans-serif;
@@ -133,30 +193,25 @@
         color: white;
     }
     
-    
     header {
         text-align: center;
         padding: 40px 20px;
         background: linear-gradient(90deg, #ff0000, #990000);
     }
     
-    
     header h1 {
         font-size: 40px;
     }
     
-    
     header p {
         opacity: 0.8;
     }
-    
     
     .container {
         width: 85%;
         margin: auto;
         padding: 20px;
     }
-    
     
     .card {
         background: rgba(255,255,255,0.05);
@@ -168,29 +223,24 @@
         transition: 0.3s;
     }
     
-    
     .card:hover {
         transform: translateY(-5px);
         box-shadow: 0 0 25px rgba(255,0,0,0.5);
     }
-    
     
     h2 {
         color: #ff4d4d;
         margin-bottom: 10px;
     }
     
-    
     h3 {
         margin-top: 10px;
         color: #ff9999;
     }
     
-    
     ul, ol {
         margin-left: 20px;
     }
-    
     
     img {
         width: 100%;
@@ -199,35 +249,29 @@
         margin: 10px 0;
     }
     
-    
     table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 10px;
     }
     
-    
     th {
         background: #ff0000;
     }
-    
     
     th, td {
         padding: 10px;
         border: 1px solid rgba(255,255,255,0.2);
     }
     
-    
     tr:hover {
         background: rgba(255,255,255,0.1);
     }
-    
     
     a {
         color: #ff4d4d;
         font-weight: bold;
     }
-    
     
     footer {
         text-align: center;
@@ -236,8 +280,10 @@
         margin-top: 20px;
     }
     
-    
-    
-    
-    </style>
-    
+    @media (max-width: 768px) {
+        .nav-menu {
+            gap: 15px;
+            font-size: 14px;
+        }
+    }
+</style>

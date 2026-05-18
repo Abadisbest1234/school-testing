@@ -9,6 +9,18 @@
 
 <body>
 
+<!-- Navigation Menu -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-brand">Abdul Abad Qureshi</div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="topic1.html">Topic 1: IC Circuits</a></li>
+            <li><a href="topic2.html">Topic 2: Competitive Programming</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 
 <header>
     <h1>Abdul Abad Qureshi</h1>
@@ -143,6 +155,50 @@
     box-sizing: border-box;
 }
 
+/* Navigation Styles */
+.navbar {
+    background: linear-gradient(90deg, #1a0000, #330000);
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.nav-brand {
+    color: #ff4d4d;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #ff4d4d;
+    border-bottom: 2px solid #ff4d4d;
+    padding-bottom: 5px;
+}
 
 body {
     font-family: 'Segoe UI', sans-serif;
@@ -253,7 +309,11 @@ footer {
     margin-top: 20px;
 }
 
-
-
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 15px;
+        font-size: 14px;
+    }
+}
 
 </style>
