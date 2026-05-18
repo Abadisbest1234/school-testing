@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Competitive Programming Guide</title>
+<title>Competitive Programming </title>
 </head>
 
 <body>
 
 <header>
     <h1>Competitive Programming</h1>
-    <p>Learn algorithms, problem-solving strategies, and compete!</p>
+    <p>By Abdul Abad Qureshi</p>
 </header>
 
 <div class="container">
@@ -18,8 +18,8 @@
     <h2>What is Competitive Programming?</h2>
     <p>
         Competitive programming is a sport where programmers solve algorithmic problems under time constraints. 
-        It develops problem-solving skills, helps you learn new algorithms, and prepares you for technical interviews. 
-        Popular platforms include Codeforces, LeetCode, HackerRank, and AtCoder.
+        It develops problem-solving skills, helps you learn new algorithms and complex problems, There are many compatitons for it 
+        such as the AIPO (all ireland programming olimpiyad) which I have competed in.
     </p>
 </div>
 
@@ -28,10 +28,10 @@
     <ul>
         <li><strong>Sorting:</strong> QuickSort, MergeSort, HeapSort</li>
         <li><strong>Searching:</strong> Binary Search, Linear Search</li>
-        <li><strong>Graph Algorithms:</strong> BFS, DFS, Dijkstra's, Floyd-Warshall</li>
-        <li><strong>Dynamic Programming:</strong> Memoization, Tabulation</li>
-        <li><strong>Mathematical:</strong> Modular Arithmetic, Prime Numbers, GCD</li>
-        <li><strong>Data Structures:</strong> Arrays, Linked Lists, Trees, Hash Tables</li>
+        <li><strong>Graph Algorithms:</strong> BFS, DFS, Dijkstra's Floyd-Warshall algorithim and grovers quantum search algorithm</li>
+        <li><strong>Dynamic Programming:</strong> Memoizatio and, Tabulation</li>
+        <li><strong>Mathematical:</strong> Modular Arithmetic, Prime Numbers and finding the greatest common demonanator</li>
+        <li><strong>Data Structures:</strong> Arrays, Linked Lists, Trees and Hash Tables</li>
     </ul>
 </div>
 
@@ -44,19 +44,19 @@
             <th>Best For</th>
         </tr>
         <tr>
-            <td>C++</td>
-            <td>⚡ Fastest</td>
-            <td>Speed-critical problems</td>
+            <td>C++/C#</td>
+            <td>Fastest</td>
+            <td>Speed-critical problems but more suitible for advanced problems</td>
         </tr>
         <tr>
             <td>Python</td>
-            <td>🐢 Slower</td>
-            <td>Quick prototyping, math problems</td>
+            <td>Slower</td>
+            <td>Quick prototyping, math problems and better for most begineer problems </td>
         </tr>
         <tr>
             <td>Java</td>
-            <td>⚡ Fast</td>
-            <td>Balanced approach</td>
+            <td>Fast</td>
+            <td>Balanced approach but quite difficult to learn at first</td>
         </tr>
     </table>
 </div>
@@ -67,7 +67,7 @@
     
     <div style="margin: 15px 0;">
         <label for="algo-select"><strong>Choose Algorithm:</strong></label>
-        <select id="algo-select" style="padding: 8px; margin: 10px 0; border-radius: 5px; cursor: pointer;">
+        <select id="algo-select" style="padding: 8px; margin: 10px 0; border-radius: 5px; cursor: pointer; color: #1a1a1a;">
             <option value="">-- Select an Algorithm --</option>
             <option value="bubble">Bubble Sort</option>
             <option value="binary">Binary Search</option>
@@ -145,10 +145,10 @@
 <div class="card">
     <h2>Popular Competitive Programming Platforms</h2>
     <p class="link">
-        <a href="https://codeforces.com" target="_blank">🔴 Codeforces</a> - 
-        <a href="https://www.hackerrank.com" target="_blank">🔵 HackerRank</a> - 
-        <a href="https://leetcode.com" target="_blank">🟡 LeetCode</a> - 
-        <a href="https://atcoder.jp" target="_blank">🟢 AtCoder</a>
+        <a href="https://codeforces.com" target="_blank"> Codeforces</a> - 
+        <a href="https://www.hackerrank.com" target="_blank"> HackerRank</a> - 
+        <a href="https://leetcode.com" target="_blank"> LeetCode</a> - 
+        <a href="https://atcoder.jp" target="_blank">AtCoder</a>
     </p>
 </div>
 
@@ -280,7 +280,6 @@ button:hover {
 </style>
 
 <script>
-// Algorithm implementations and visualizations
 const algorithms = {
     bubble: {
         name: 'Bubble Sort',
@@ -425,8 +424,6 @@ function runAlgorithm() {
         document.getElementById('output-section').style.display = 'block';
     }
 }
-
-// Allow Enter key to run algorithm
 document.getElementById('user-input').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') runAlgorithm();
 });
