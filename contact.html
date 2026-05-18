@@ -269,12 +269,12 @@ document.getElementById('contactForm').addEventListener('submit', async function
     
     try {
         const formData = {
-            to_email: 'Abadisbest1234@gmail.com', 
+            to_email: 'abadisbest1234@gmail.com', 
             name: document.getElementById('name').value,
             from_email: document.getElementById('email').value,
             subject: document.getElementById('subject').value,
             message: document.getElementById('message').value,
-            reply_to: document.getElementById('email').value
+            reply_to: document.getElementById(from_email).value
         };
         
     
